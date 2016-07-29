@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 #density model
 #--------------------------------------------------------------------------------
-os.chdir("C:\\Python35-32") 
+os.chdir("C:\\Python35-32") #<--- replace with corresponding directory
 wb = openpyxl.load_workbook("densitymodel.xlsx")
 sheet = wb.get_sheet_by_name("Sheet1")
 densityData= {}
@@ -71,7 +71,7 @@ timeList = [t]
 while orbit >= minimum:
     
     fD = 0.5*density*(velocity**2)*dragCoefficient*surfaceArea
-    distance = (instantTime/P)*3.14*radius*2 #<----
+    distance = (instantTime/P)*3.14*radius*2 
     workdone = fD*distance 
     totalEnergy = totalEnergy - workdone 
     radius = ((-0.5)*gvConstant*m1*m2/totalEnergy)
